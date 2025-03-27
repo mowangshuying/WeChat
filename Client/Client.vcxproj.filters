@@ -80,7 +80,7 @@
     <ClCompile Include="CustomListWidgetItem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="QSessionTopWnd.cpp">
+    <ClCompile Include="TopWnd.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ChatMsgWnd.cpp">
@@ -217,7 +217,7 @@
     <QtMoc Include="SelfSplit.h">
       <Filter>Header Files</Filter>
     </QtMoc>
-    <QtMoc Include="QSessionTopWnd.h">
+    <QtMoc Include="TopWnd.h">
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="ChatMsgWnd.h">

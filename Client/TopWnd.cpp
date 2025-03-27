@@ -1,6 +1,6 @@
-#include "QSessionTopWnd.h"
+#include "TopWnd.h"
 
-QSessionTopWnd::QSessionTopWnd(QWidget* p /*= nullptr*/) : QWidget(p)
+TopWnd::TopWnd(QWidget* p /*= nullptr*/) : QWidget(p)
 {
     LogFunc;
     m_vLayout = new QVBoxLayout(this);

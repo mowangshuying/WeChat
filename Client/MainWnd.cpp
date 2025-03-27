@@ -56,9 +56,14 @@ MainWnd::MainWnd(QWidget* p /*= nullptr*/) : FramelessWidget(p)
     m_sRightLayout = new QStackedLayout(m_centerWnd);
     m_sRightLayout->setContentsMargins(0, 0, 0, 0);
 
+        // 查找好友窗口
+    m_findFriendOrGroupWnd = new FindFriendOrGroupWnd(m_centerWnd);
+    m_sRightLayout->addWidget(m_findFriendOrGroupWnd);
+
     // 联系人信息窗口
     m_commContactInfo = new CommContactInfoWnd(m_centerWnd);
     m_sRightLayout->addWidget(m_commContactInfo);
+
     connect(m_commContactInfo->m_closeBtn, SIGNAL(clicked()), this, SLOT(closeWnd()));
     connect(m_commContactInfo->m_maxBtn, SIGNAL(clicked()), this, SLOT(maxWnd()));
     connect(m_commContactInfo->m_minBtn, SIGNAL(clicked()), this, SLOT(minWnd()));
@@ -559,7 +564,7 @@ void MainWnd::requestSessionList()
                 // 不是群组会话，应该隐藏more按钮
                 if (!isgroupses)
                 {
-                    sesWnd->m_sesTopWnd->m_moreBtn->hide();
+                    sesWnd->m_sesTopWnd->getMoreBtn()->hide();
                 }
                 else
                 {
@@ -567,9 +572,9 @@ void MainWnd::requestSessionList()
                     sesWnd->m_groupInfoWnd->setGroupId(recvid);
                 }
 
-                connect(sesWnd->m_sesTopWnd->m_closeBtn, SIGNAL(clicked()), this, SLOT(closeWnd()));
-                connect(sesWnd->m_sesTopWnd->m_maxBtn, SIGNAL(clicked()), this, SLOT(maxWnd()));
-                connect(sesWnd->m_sesTopWnd->m_minBtn, SIGNAL(clicked()), this, SLOT(minWnd()));
+                connect(sesWnd->m_sesTopWnd->getCloseBtn(), SIGNAL(clicked()), this, SLOT(closeWnd()));
+                connect(sesWnd->m_sesTopWnd->getMaxBtn(), SIGNAL(clicked()), this, SLOT(maxWnd()));
+                connect(sesWnd->m_sesTopWnd->getMinBtn(), SIGNAL(clicked()), this, SLOT(minWnd()));
                 m_sRightLayout->addWidget(sesWnd);
             }
         }

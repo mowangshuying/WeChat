@@ -55,7 +55,7 @@
     <QtBuildConfig>debug</QtBuildConfig>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="QtSettings">
-    <QtInstall>6.5.1_msvc2019_64</QtInstall>
+    <QtInstall>6.8.1_msvc2022_64</QtInstall>
     <QtModules>core;network;gui;multimedia;widgets;websockets;multimediawidgets</QtModules>
     <QtBuildConfig>debug</QtBuildConfig>
   </PropertyGroup>
@@ -213,7 +213,7 @@
     <ClCompile Include="Log.cpp" />
     <ClCompile Include="SelfTextEdit.cpp" />
     <ClCompile Include="SessionToolBar.cpp" />
-    <ClCompile Include="QSessionTopWnd.cpp" />
+    <ClCompile Include="TopWnd.cpp" />
     <ClCompile Include="SessionWnd.cpp" />
     <ClCompile Include="SettingWnd.cpp" />
     <ClCompile Include="SelfLabel.cpp" />
@@ -300,7 +300,7 @@
     <QtMoc Include="CommContactItemWnd.h" />
     <QtMoc Include="CommMsgItemWnd.h" />
     <ClInclude Include="CustomListWidgetItem.h" />
-    <QtMoc Include="QSessionTopWnd.h" />
+    <QtMoc Include="TopWnd.h" />
     <QtMoc Include="SelfSplit.h" />
     <QtMoc Include="SessionWnd.h" />
   </ItemGroup>

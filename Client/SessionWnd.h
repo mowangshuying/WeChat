@@ -8,7 +8,7 @@
 #include <QPushButton>
 #include <QListWidget>  //窗口列表
 
-#include "QSessionTopWnd.h"
+#include "TopWnd.h"
 #include "SessionToolBar.h"
 #include "GroupInfoWnd.h"
 #include <QListWidget>
@@ -52,7 +52,7 @@ class SessionWnd : public QWidget
 
     void setTitle(QString title)
     {
-        m_sesTopWnd->m_titleLabel->setText(title);
+        m_sesTopWnd->setTitle(title);
     }
 
     void dealMsgTime();
@@ -64,7 +64,7 @@ class SessionWnd : public QWidget
     // 窗口布局管理
     QVBoxLayout* m_vLayout;
     // 会话的上放窗口
-    QSessionTopWnd* m_sesTopWnd;
+    TopWnd* m_sesTopWnd;
     // 窗口列表信息
 
     QListWidget* m_MsgWndList;

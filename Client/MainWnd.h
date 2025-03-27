@@ -121,6 +121,7 @@ class MainWnd : public FRAMELESSHELPER_PREPEND_NAMESPACE(FramelessWidget)
     QStackedLayout* m_sRightLayout;
     // 联系人页面
     CommContactInfoWnd* m_commContactInfo;
+    FindFriendOrGroupWnd* m_findFriendOrGroupWnd;
     // 处理添加好友窗口；
     DealNewFriendsApplyWnd* m_dealNewFriendsApplyWnd;
     // 会话窗口

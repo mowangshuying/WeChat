@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #include "def.h"
 
@@ -12,6 +12,7 @@
 #include <QLineEdit>
 #include <QListWidget>
 #include <QCheckBox>
+#include "TopWnd.h"
 
 class FindFriendOrGroupWnd : public QWidget
 {
@@ -19,38 +20,23 @@ class FindFriendOrGroupWnd : public QWidget
   public:
     FindFriendOrGroupWnd(QWidget* p = nullptr);
 
-    void mouseMoveEvent(QMouseEvent* event);
-    void mousePressEvent(QMouseEvent* event);
-    void mouseReleaseEvent(QMouseEvent* event);
-
-    void addFriendItem(const char* headUrl, const char* name, int64_t userid);
+    void addFriendItem(const char* headUrl, const char* name, int64 userid);
   public slots:
-    void slotCloseWnd();
-    void slotMinWnd();
-    void slotOnSearchBtnClicked();
+    void onSearchBtnClicked();
 
   public:
     QWidget* m_centerWnd;
     QVBoxLayout* m_vLayout;
-    QHBoxLayout* m_hLayout1;
-    // QHBoxLayout* m_hLayout2;
-    QHBoxLayout* m_hLayout2;
+    QHBoxLayout* m_hLayout;
 
-    // 第1行
-    QLabel* m_titleLabel;
-    QPushButton* m_minBtn;
-    QPushButton* m_closeBtn;
+    // top wnd;
+    TopWnd* m_topWnd;
 
-    // 第2行
-    QCheckBox* m_findPersonChx;
-    QCheckBox* m_findGroupChx;
-
-    // 第3行
     QLineEdit* m_searchEdit;
+    QCheckBox* m_findPersonCheckBox;
+    QCheckBox* m_findGroupCheckBox;
     QPushButton* m_searchBtn;
 
+    // list;
     QListWidget* m_listWidget;
-
-    bool m_bPress = false;
-    QPoint m_poPress;
 };

@@ -39,32 +39,32 @@ SelectGroupFriendWnd::SelectGroupFriendWnd(QWidget* p) : QWidget(p)
 
     m_centerWnd->setLayout(m_vCenterLayout);
 
-    m_findFriendOrGroupWnd = new FindFriendOrGroupWnd();
-    m_findFriendOrGroupWnd->hide();
+    //m_findFriendOrGroupWnd = new FindFriendOrGroupWnd();
+    //m_findFriendOrGroupWnd->hide();
 
-    m_crateGroupWnd = new CreateGroupWnd();
-    m_crateGroupWnd->hide();
+    //m_crateGroupWnd = new CreateGroupWnd();
+    //m_crateGroupWnd->hide();
 
-    connect(m_addContactsOrGroupBtn, SIGNAL(clicked()), this, SLOT(slotAddContactsOrGroupBtnClick()));
-    connect(m_createGroupBtn, SIGNAL(clicked()), this, SLOT(slotCreateGroup()));
+    //connect(m_addContactsOrGroupBtn, SIGNAL(clicked()), this, SLOT(slotAddContactsOrGroupBtnClick()));
+    //connect(m_createGroupBtn, SIGNAL(clicked()), this, SLOT(slotCreateGroup()));
 }
 
 void SelectGroupFriendWnd::slotAddContactsOrGroupBtnClick()
 {
-    if (m_findFriendOrGroupWnd != nullptr)
-    {
-        m_findFriendOrGroupWnd->showNormal();
-        m_findFriendOrGroupWnd->activateWindow();
-    }
+    //if (m_findFriendOrGroupWnd != nullptr)
+    //{
+    //    m_findFriendOrGroupWnd->showNormal();
+    //    m_findFriendOrGroupWnd->activateWindow();
+    //}
 }
 
 void SelectGroupFriendWnd::slotCreateGroup()
 {
-    if (m_crateGroupWnd != nullptr)
-    {
-        m_crateGroupWnd->updateData();
-        m_crateGroupWnd->show();
-    }
+    //if (m_crateGroupWnd != nullptr)
+    //{
+    //    m_crateGroupWnd->updateData();
+    //    m_crateGroupWnd->show();
+    //}
 }
 
 bool SelectGroupFriendWnd::event(QEvent* event)

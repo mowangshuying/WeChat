@@ -9,15 +9,40 @@
 
 #include "json/CJsonObject.hpp"
 
-class QSessionTopWnd : public QWidget
+class TopWnd : public QWidget
 {
     // 添加消息映射支持
     Q_OBJECT
   public:
     // 会话窗口
-    QSessionTopWnd(QWidget* p = nullptr);
+    TopWnd(QWidget* p = nullptr);
 
-  public:
+    QPushButton* getMoreBtn()
+    {
+        return m_moreBtn;
+    }
+
+    QPushButton* getMinBtn()
+    {
+        return m_minBtn;
+    }
+
+    QPushButton* getMaxBtn()
+    {
+        return m_maxBtn;
+    }
+
+    QPushButton* getCloseBtn()
+    {
+        return m_closeBtn;
+    }
+
+    void setTitle(const QString& title)
+    {
+        m_titleLabel->setText(title);
+    }
+
+  protected:
     QVBoxLayout* m_vLayout;
     QHBoxLayout* m_hLayout1;
     QHBoxLayout* m_hLayout2;

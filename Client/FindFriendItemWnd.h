@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #include "def.h"
 
@@ -13,23 +13,17 @@ class FindFriendItemWnd : public QWidget
 {
     Q_OBJECT
   public:
-    FindFriendItemWnd(QWidget* p);
-    FindFriendItemWnd(QWidget* p, const char* headUrl, const char* name);
+    FindFriendItemWnd(const QString& headUrl, const QString& username, qint64 userid, QWidget* parent = nullptr);
   public slots:
-    void slotAddFriendBtnClick();
+    void onAddFriendBtnClick();
 
-  public:
+  protected:
     QHBoxLayout* m_hLayout;
-    // 联系人头像
-    QLabel* m_headUrl;
-    // 联系人名字
-    QLabel* m_name;
-    // 添加朋友按钮
+    QLabel* m_headImgLabel;
+    QLabel* m_usernameLabel;
     QPushButton* m_addFriendBtn;
-    // 添加好友的用户id
-    int64_t m_friendid;
-    // 添加好友用户名
+  
+    qint64 m_userid;
     QString m_username;
-
     ApplyFriendNextWnd* m_nextWnd;
 };

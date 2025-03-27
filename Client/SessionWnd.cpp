@@ -8,7 +8,7 @@
 
 #include "SessionWnd.h"
 #include "ChatMsgWnd.h"
-#include "QSessionTopWnd.h"
+#include "TopWnd.h"
 #include "SelfSplit.h"
 #include "MainWnd.h"
 #include "NetClientUtils.h"
@@ -49,7 +49,7 @@ SessionWnd::SessionWnd(QWidget* p /*= nullptr*/) : QWidget(p)
     m_groupInfoWnd->hide();
 
     // 会话窗口的top
-    m_sesTopWnd = new QSessionTopWnd(this);
+    m_sesTopWnd = new TopWnd(this);
 
     // 消息窗口
     m_MsgWndList = new QListWidget(this);
@@ -109,7 +109,7 @@ SessionWnd::SessionWnd(QWidget* p /*= nullptr*/) : QWidget(p)
     setAttribute(Qt::WA_StyledBackground);
 
     connect(m_sesToolBar->m_emoijWnd, SIGNAL(signalEmoijClicked(QString)), this, SLOT(slotEmoijClicked(QString)));
-    connect(m_sesTopWnd->m_moreBtn, SIGNAL(clicked()), this, SLOT(slotMoreBtnClick()));
+    connect(m_sesTopWnd->getMoreBtn(), SIGNAL(clicked()), this, SLOT(slotMoreBtnClick()));
     connect(m_sesToolBar->m_voiceTelphoneBtn, &QPushButton::clicked, this, &SessionWnd::slotVoiceTelPhoneBtnClick);
     connect(m_groupInfoWnd, SIGNAL(signalUpdateGroupName(QString)), this, SLOT(slotUpdateGroupName(QString)));
 }
@@ -238,7 +238,8 @@ void SessionWnd::slotVoiceTelPhoneBtnClick()
 
 void SessionWnd::slotUpdateGroupName(QString groupName)
 {
-    m_sesTopWnd->m_titleLabel->setText(groupName);
+    //m_sesTopWnd->m_titleLabel->setText(groupName);
+    m_sesTopWnd->setTitle(groupName);
     CommListWnd* pGroupListWnd = MainWnd::getMainWnd()->m_commGroupsListWnd;
     pGroupListWnd->setGroupItemNameByGroupId(m_recvId, groupName);
     CommListWnd* pMsgListWnd = MainWnd::getMainWnd()->m_commMsgListWnd;
